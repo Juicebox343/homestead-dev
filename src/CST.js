@@ -18,7 +18,8 @@ export const CST = {
         ROBIN: "robin_fly.png",
         TREE: 'tree.png',
         GRASS: 'grass.png',
-        WATER_GRASS: 'watergrass.png'
+        WATER_GRASS: 'watergrass.png',
+        UI_HEART: 'heartsprite.png'
     },
     CHARACTERS: {
         HERO: {

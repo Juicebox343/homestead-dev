@@ -3,6 +3,9 @@ import {debugDraw} from './debug.js'
 import {createBatAnims} from './EnemyAnims.js'
 import {createCharacterAnims } from "./CharacterAnims.js";
 import {Bat} from './Enemies.js';
+import '../characters/Hero.js';
+
+let hit = 0;
 
 export class WorldScene extends Phaser.Scene{
   constructor(){
@@ -38,14 +41,11 @@ export class WorldScene extends Phaser.Scene{
 
     waterLayer.setCollisionByProperty({ collides: true });
 
-    
-    this.hero = this.physics.add.sprite(200,200,'hero', 'hero-27');
-    this.hero.body.setSize(this.hero.width * 0.5, this.hero.height * 0.75)
-    this.hero.body.collideWorldBounds = true;
-    this.hero.setOffset(16, 15)
+
+    this.hero = this.add.hero(128, 128, 'hero')
+
     this.hero.direction = 'down';
     
-
     const camera = this.cameras.main;
     camera.startFollow(this.hero, true);
     camera.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
@@ -58,45 +58,27 @@ export class WorldScene extends Phaser.Scene{
     })
 
     bats.get(256,128,'bat')
-
+    
     this.physics.add.collider(this.hero, waterLayer);
     this.physics.add.collider(bats, waterLayer);
+    this.physics.add.collider(bats, this.hero, this.handlePlayerEnemyCollision, undefined, this)
 
     debugDraw(waterLayer, this, '#FBBC5A')
    
   }
+
+  handlePlayerEnemyCollision(object1, object2){
+    const enemy = object2;
+    const directionX = this.hero.x - enemy.x;
+    const directionY = this.hero.y - enemy.y;
+    let direction = new Phaser.Math.Vector2(directionX, directionY).normalize().scale(300);
+  
+    this.hero.handleDamage(direction)
+
+  }
   
   update(time, delta){
-      
-      const speed = 200;
-      this.hero.setVelocity(0,0)
-
-      //if no keys are down, play the idle frame according to direction.
-      if (!(this.keyboard.W.isDown || this.keyboard.A.isDown || this.keyboard.S.isDown || this.keyboard.D.isDown)) {
-        this.hero.anims.play(`${this.hero.direction}-idle`, true);
-      } else {
-        //if a key is down, set velocity according to speed, set direction
-        if(this.keyboard.W.isDown){
-          this.hero.setVelocityY(-speed);
-          this.hero.direction = 'up';
-        } else if(this.keyboard.S.isDown){
-          this.hero.setVelocityY(speed);
-          this.hero.direction = 'down';
-        }
-  
-        if(this.keyboard.A.isDown){
-          this.hero.setVelocityX(-speed);
-          this.hero.direction = 'left';
-        } else if(this.keyboard.D.isDown){
-          this.hero.setVelocityX(speed);
-          this.hero.direction = 'right';
-        }
-
-        //play appropirate animation as dictated by direction from above
-        this.hero.anims.play(`${this.hero.direction}-walk`, true);
-      }
-
-      this.hero.body.velocity.normalize().scale(speed);
+      this.hero.update(this.keyboard)
   }
 
 }

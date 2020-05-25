@@ -20,6 +20,7 @@ export class Bat extends Phaser.Physics.Arcade.Sprite{
         this.anims.play('bat-front')
 
         scene.physics.world.on(Phaser.Physics.Arcade.Events.TILE_COLLIDE, this.handleTileCollision, this);
+       
 
         this.moveEvent = scene.time.addEvent({
             delay: 2000,
@@ -64,7 +65,7 @@ export class Bat extends Phaser.Physics.Arcade.Sprite{
 
     destroy(fromScene){
         this.moveEvent.destroy()
-        
+
         super.destroy(fromScene)
     }
 }
