@@ -1,3 +1,5 @@
+import {CST} from '../CST.js'
+
 const HealthState = {IDLE: 1, DAMAGE: 2, DEAD: 3}
 
 export default class Hero extends Phaser.Physics.Arcade.Sprite{
@@ -14,6 +16,10 @@ export default class Hero extends Phaser.Physics.Arcade.Sprite{
     constructor(scene, x, y, texture, frame)
     {
         super(scene, x, y, texture, frame)
+    }
+
+    setArrows(arrows){
+      this.arrows = arrows;
     }
 
     handleDamage(direction){
@@ -37,6 +43,44 @@ export default class Hero extends Phaser.Physics.Arcade.Sprite{
           this.healthState = HealthState.DEAD;
         }
         console.log('triggered')
+    }
+
+    arrowAnimation(){
+     
+      this.shootArrow()
+    }
+
+    shootArrow(){
+      let firingDirection = this.direction;
+      const arrowVec = new Phaser.Math.Vector2(0,0); 
+      
+      switch (firingDirection){
+        case 'up':
+          arrowVec.y = -1
+          break;
+        case 'down':
+          arrowVec.y = 1
+          break;
+        case 'left':
+          arrowVec.x = -1
+          break;
+        case 'right':
+          arrowVec.x = 1
+          break;
+        default:
+
+      }
+
+      const angle = arrowVec.angle();
+      const arrow = this.arrows.get(this.x, this.y, CST.SPRITE.PLAIN_ARROW.KEY_NAME)
+      arrow.setRotation(angle)
+      arrow.setVelocity(arrowVec.x * 500, arrowVec.y * 500)
+
+      arrow.x += arrowVec.x * 8;
+      arrow.y +- arrowVec.y * 8;
+
+      arrow.setActive(true);
+      arrow.setVisible(true);
     }
 
 
@@ -72,10 +116,15 @@ export default class Hero extends Phaser.Physics.Arcade.Sprite{
         this.setVelocity(0,0)
 
         //if no keys are down, play the idle frame according to direction.
-        if (!(keyboard.W.isDown || keyboard.A.isDown || keyboard.S.isDown || keyboard.D.isDown)) {
+        if (!(keyboard.W.isDown || keyboard.A.isDown || keyboard.S.isDown || keyboard.D.isDown || keyboard.SPACE.isDown)) {
           this.anims.play(`${this.direction}-idle`, true);
           
-        } else {
+        } else if(Phaser.Input.Keyboard.JustDown(keyboard.SPACE)){
+            this.setVelocity(0,0)
+            this.anims.play(`${this.direction}-shoot`, true); 
+            this.once('animationcomplete', this.shootArrow, this);
+            return
+          } else if(!keyboard.SPACE.isDown) {
           //if a key is down, set velocity according to speed, set direction
           if(keyboard.W.isDown){
             this.setVelocityY(-speed);          
@@ -92,9 +141,13 @@ export default class Hero extends Phaser.Physics.Arcade.Sprite{
             this.setVelocityX(speed);
             this.direction = 'right';
           }
+
+
   
           //play appropirate animation as dictated by direction from above
-          this.anims.play(`${this.direction}-walk`, true);
+          if(!keyboard.SPACE.isDown){
+            this.anims.play(`${this.direction}-walk`, true);
+          }
         }
   
         this.body.velocity.normalize().scale(speed);

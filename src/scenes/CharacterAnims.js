@@ -111,6 +111,56 @@ const createCharacterAnims = (anims) => {
       frameRate: heroRate,
       repeat: 0
     });
+
+    //
+
+    anims.create({
+      key: 'up-shoot',
+      frames: anims.generateFrameNames('hero', {
+        prefix: 'hero-', 
+        start: 44, 
+        end: 45
+      }),
+      frameRate: 16,
+      repeat: 0,
+      yoyo: true
+    });
+
+    anims.create({
+      key: 'right-shoot',
+      frames: anims.generateFrameNames('hero', {
+        prefix: 'hero-', 
+        start: 47, 
+        end: 48
+      }),
+      frameRate: 16,
+      repeat: 0,
+      yoyo: true
+    });   
+
+    anims.create({
+      key: 'down-shoot',
+      frames: anims.generateFrameNames('hero', {
+        prefix: 'hero-', 
+        start: 50, 
+        end: 51
+      }),
+      frameRate: 16,
+      repeat: 0,
+      yoyo: true
+    });
+
+    anims.create({
+      key: 'left-shoot',
+      frames: anims.generateFrameNames('hero', {
+        prefix: 'hero-', 
+        start: 41, 
+        end: 42
+      }),
+      frameRate: 16,
+      repeat: 0,
+      yoyo: true
+    });
    
 }
 

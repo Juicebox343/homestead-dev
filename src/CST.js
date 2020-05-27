@@ -46,6 +46,12 @@ export const CST = {
             SPRITES: 'heartsprite.png',
             WIDTH: 16,
             HEIGHT: 16
+        },
+        PLAIN_ARROW: {
+            KEY_NAME: 'plain_arrow',
+            SPRITES: 'arrow-knocked.png',
+            WIDTH: 27,
+            HEIGHT: 12
         }
     },
     CHARACTERS: {

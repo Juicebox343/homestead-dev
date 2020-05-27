@@ -45,8 +45,10 @@ export class WorldScene extends Phaser.Scene{
 
     waterLayer.setCollisionByProperty({ collides: true });
 
+    this.arrows = this.physics.add.group({})
 
     this.hero = this.add.hero(128, 128, CST.CHARACTERS.HERO.KEY_NAME)
+    this.hero.setArrows(this.arrows)
 
     this.hero.direction = 'down';
     
@@ -54,21 +56,29 @@ export class WorldScene extends Phaser.Scene{
     camera.startFollow(this.hero, true);
     camera.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
     
-    const bats = this.physics.add.group({
+    this.bats = this.physics.add.group({
       classType: Bat,
       createCallback: (gameObject) =>{
         gameObject.body.onCollide = true;
       }
     })
 
-    bats.get(256,128,'bat')
+    this.bats.get(256,128,'bat')
     
     this.physics.add.collider(this.hero, waterLayer);
-    this.physics.add.collider(bats, waterLayer);
-    this.physics.add.collider(bats, this.hero, this.handlePlayerEnemyCollision, undefined, this)
+    this.physics.add.collider(this.bats, waterLayer);
+    this.arrowEnemyCollider = this.physics.add.collider(this.arrows, this.bats, this.handleArrowEnemyCollision, undefined, this)
+    this.playerEnemeyCollider = this.physics.add.collider(this.bats, this.hero, this.handlePlayerEnemyCollision, undefined, this)
 
     //debugDraw(waterLayer, this, '#FBBC5A')
    
+  }
+
+  handleArrowEnemyCollision(object1, object2){
+    this.arrows.killAndHide(object1)
+    this.bats.killAndHide(object2)
+    this.arrowEnemyCollider.destroy()
+    this.playerEnemeyCollider.destroy()
   }
 
   handlePlayerEnemyCollision(object1, object2){
@@ -80,6 +90,10 @@ export class WorldScene extends Phaser.Scene{
     this.hero.handleDamage(direction)
 
     sceneEvents.emit('player-health-changed', this.hero.health )
+
+    if (this.hero.health <=0){
+      this.playerEnemeyCollider.destroy()
+    }
   }
   
   update(time, delta){
