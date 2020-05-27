@@ -54,10 +54,7 @@ export default class Hero extends Phaser.Physics.Arcade.Sprite{
                     this.damageTime = 0;
                 }
               break;
-            case HealthState.DEAD:
-              this.anims.play('up-idle')
-              this.setVelocity(0,0)
-              this.setTint(0x000000);
+            case HealthState.DEATH:
             break; 
         }
     }
@@ -73,7 +70,7 @@ export default class Hero extends Phaser.Physics.Arcade.Sprite{
 
         //if no keys are down, play the idle frame according to direction.
         if (!(keyboard.W.isDown || keyboard.A.isDown || keyboard.S.isDown || keyboard.D.isDown)) {
-          this.anims.play(`${this.direction}-idle`, true);
+          this.anims.play('idle', true);
           
         } else {
           //if a key is down, set velocity according to speed, set direction
@@ -88,13 +85,17 @@ export default class Hero extends Phaser.Physics.Arcade.Sprite{
           if(keyboard.A.isDown){
             this.setVelocityX(-speed);
             this.direction = 'left';
+            this.flipX = true;
+            this.setOffset(12, 10)
           } else if(keyboard.D.isDown){
             this.setVelocityX(speed);
             this.direction = 'right';
+            this.setOffset(5, 10)
+            this.flipX = false;
           }
   
           //play appropirate animation as dictated by direction from above
-          this.anims.play(`${this.direction}-walk`, true);
+          this.anims.play('walk', true);
         }
   
         this.body.velocity.normalize().scale(speed);
@@ -109,7 +110,8 @@ Phaser.GameObjects.GameObjectFactory.register('hero', function(x, y, texture, fr
 
     this.scene.physics.world.enableBody(sprite, Phaser.Physics.Arcade.DYNAMIC_BODY);
     sprite.body.setSize(sprite.width * 0.5, sprite.height * 0.75)
-    sprite.setOffset(16, 15)
+    sprite.setOffset(5, 10)
     sprite.body.collideWorldBounds = true;
+    sprite.setScale(2, 2)
     return sprite;
 })

@@ -1,0 +1,881 @@
+{
+	"textures": [
+		{
+			"image": "hero_alt.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 246,
+				"h": 71
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "Adventurer Female Sprite Sheet-17",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 8,
+						"w": 26,
+						"h": 24
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 26,
+						"h": 24
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-21",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 8,
+						"w": 26,
+						"h": 24
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 26,
+						"h": 24
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-26",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 10,
+						"w": 27,
+						"h": 22
+					},
+					"frame": {
+						"x": 29,
+						"y": 1,
+						"w": 27,
+						"h": 22
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-37",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 11,
+						"w": 27,
+						"h": 21
+					},
+					"frame": {
+						"x": 58,
+						"y": 1,
+						"w": 27,
+						"h": 21
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-38",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 11,
+						"w": 27,
+						"h": 21
+					},
+					"frame": {
+						"x": 87,
+						"y": 1,
+						"w": 27,
+						"h": 21
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-39",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 11,
+						"w": 27,
+						"h": 21
+					},
+					"frame": {
+						"x": 116,
+						"y": 1,
+						"w": 27,
+						"h": 21
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-40",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 11,
+						"w": 27,
+						"h": 21
+					},
+					"frame": {
+						"x": 145,
+						"y": 1,
+						"w": 27,
+						"h": 21
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-27",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 11,
+						"w": 26,
+						"h": 21
+					},
+					"frame": {
+						"x": 1,
+						"y": 27,
+						"w": 26,
+						"h": 21
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-7",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 8,
+						"w": 20,
+						"h": 20
+					},
+					"frame": {
+						"x": 1,
+						"y": 50,
+						"w": 20,
+						"h": 20
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-32",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 11,
+						"w": 25,
+						"h": 21
+					},
+					"frame": {
+						"x": 29,
+						"y": 25,
+						"w": 25,
+						"h": 21
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-28",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 11,
+						"w": 23,
+						"h": 21
+					},
+					"frame": {
+						"x": 174,
+						"y": 1,
+						"w": 23,
+						"h": 21
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-16",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 11,
+						"w": 22,
+						"h": 21
+					},
+					"frame": {
+						"x": 199,
+						"y": 1,
+						"w": 22,
+						"h": 21
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-20",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 11,
+						"w": 22,
+						"h": 21
+					},
+					"frame": {
+						"x": 199,
+						"y": 1,
+						"w": 22,
+						"h": 21
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-18",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 11,
+						"w": 22,
+						"h": 21
+					},
+					"frame": {
+						"x": 223,
+						"y": 1,
+						"w": 22,
+						"h": 21
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-0",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 10,
+						"w": 18,
+						"h": 22
+					},
+					"frame": {
+						"x": 29,
+						"y": 48,
+						"w": 18,
+						"h": 22
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-15",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 10,
+						"w": 18,
+						"h": 22
+					},
+					"frame": {
+						"x": 29,
+						"y": 48,
+						"w": 18,
+						"h": 22
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-19",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 10,
+						"w": 18,
+						"h": 22
+					},
+					"frame": {
+						"x": 29,
+						"y": 48,
+						"w": 18,
+						"h": 22
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-13",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 10,
+						"w": 16,
+						"h": 22
+					},
+					"frame": {
+						"x": 49,
+						"y": 48,
+						"w": 16,
+						"h": 22
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-29",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 11,
+						"w": 18,
+						"h": 21
+					},
+					"frame": {
+						"x": 56,
+						"y": 25,
+						"w": 18,
+						"h": 21
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-9",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 10,
+						"w": 16,
+						"h": 22
+					},
+					"frame": {
+						"x": 67,
+						"y": 48,
+						"w": 16,
+						"h": 22
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-10",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 8,
+						"w": 15,
+						"h": 22
+					},
+					"frame": {
+						"x": 76,
+						"y": 24,
+						"w": 15,
+						"h": 22
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-11",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 7,
+						"w": 14,
+						"h": 22
+					},
+					"frame": {
+						"x": 85,
+						"y": 48,
+						"w": 14,
+						"h": 22
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-12",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 8,
+						"w": 14,
+						"h": 22
+					},
+					"frame": {
+						"x": 93,
+						"y": 24,
+						"w": 14,
+						"h": 22
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-1",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 9,
+						"w": 21,
+						"h": 23
+					},
+					"frame": {
+						"x": 109,
+						"y": 24,
+						"w": 21,
+						"h": 23
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-4",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 9,
+						"w": 21,
+						"h": 23
+					},
+					"frame": {
+						"x": 109,
+						"y": 24,
+						"w": 21,
+						"h": 23
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-6",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 9,
+						"w": 20,
+						"h": 21
+					},
+					"frame": {
+						"x": 101,
+						"y": 49,
+						"w": 20,
+						"h": 21
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-8",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 9,
+						"w": 20,
+						"h": 21
+					},
+					"frame": {
+						"x": 101,
+						"y": 49,
+						"w": 20,
+						"h": 21
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-33",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 11,
+						"w": 19,
+						"h": 21
+					},
+					"frame": {
+						"x": 123,
+						"y": 49,
+						"w": 19,
+						"h": 21
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-2",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 9,
+						"w": 21,
+						"h": 23
+					},
+					"frame": {
+						"x": 132,
+						"y": 24,
+						"w": 21,
+						"h": 23
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-3",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 9,
+						"w": 21,
+						"h": 23
+					},
+					"frame": {
+						"x": 132,
+						"y": 24,
+						"w": 21,
+						"h": 23
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-30",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 11,
+						"w": 18,
+						"h": 21
+					},
+					"frame": {
+						"x": 144,
+						"y": 49,
+						"w": 18,
+						"h": 21
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-35",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 11,
+						"w": 18,
+						"h": 21
+					},
+					"frame": {
+						"x": 155,
+						"y": 24,
+						"w": 18,
+						"h": 21
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-5",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 11,
+						"w": 18,
+						"h": 21
+					},
+					"frame": {
+						"x": 175,
+						"y": 24,
+						"w": 18,
+						"h": 21
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-14",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 13,
+						"w": 19,
+						"h": 19
+					},
+					"frame": {
+						"x": 195,
+						"y": 24,
+						"w": 19,
+						"h": 19
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-22",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 16,
+						"w": 22,
+						"h": 16
+					},
+					"frame": {
+						"x": 216,
+						"y": 24,
+						"w": 22,
+						"h": 16
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-31",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 11,
+						"w": 17,
+						"h": 21
+					},
+					"frame": {
+						"x": 164,
+						"y": 47,
+						"w": 17,
+						"h": 21
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-34",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 11,
+						"w": 17,
+						"h": 21
+					},
+					"frame": {
+						"x": 183,
+						"y": 47,
+						"w": 17,
+						"h": 21
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-36",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 11,
+						"w": 17,
+						"h": 21
+					},
+					"frame": {
+						"x": 202,
+						"y": 45,
+						"w": 17,
+						"h": 21
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-24",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 19,
+						"w": 23,
+						"h": 13
+					},
+					"frame": {
+						"x": 221,
+						"y": 42,
+						"w": 23,
+						"h": 13
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-23",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 20,
+						"w": 23,
+						"h": 12
+					},
+					"frame": {
+						"x": 221,
+						"y": 57,
+						"w": 23,
+						"h": 12
+					}
+				},
+				{
+					"filename": "Adventurer Female Sprite Sheet-25",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 20,
+						"w": 23,
+						"h": 12
+					},
+					"frame": {
+						"x": 221,
+						"y": 57,
+						"w": 23,
+						"h": 12
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:8747483c7ff71a9d35fba54b47775688:a699db824783489a81c51f238aea5cca:d0074fb595fdc1802a9ff4a648056b2e$"
+	}
+}

@@ -27,7 +27,7 @@ export class LoadScene extends Phaser.Scene{
     loadSprites(frameConfig){
         this.load.setPath("./assets/sprites");
         for(let prop in CST.SPRITE){
-            this.load.spritesheet(CST.SPRITE[prop], CST.SPRITE[prop], frameConfig);
+            this.load.spritesheet(CST.SPRITE[prop].KEY_NAME, CST.SPRITE[prop].SPRITES, {frameWidth: CST.SPRITE[prop].WIDTH, frameHeight: CST.SPRITE[prop].HEIGHT});
         }
     }
 
@@ -37,14 +37,12 @@ export class LoadScene extends Phaser.Scene{
             this.load.atlas(CST.CHARACTERS[prop].KEY_NAME, CST.CHARACTERS[prop].SPRITES, CST.CHARACTERS[prop].ATLAS);
         }   
     }
+    
     preload(){
 
         this.loadImages();
         // this.loadAudio();
-        this.loadSprites({
-            frameHeight: 32,
-            frameWidth: 32
-        });
+        this.loadSprites();
         this.loadCharacters();
         //loading bar
         let loadingBar = this.add.graphics({

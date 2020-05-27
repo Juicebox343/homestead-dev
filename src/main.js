@@ -1,6 +1,7 @@
 import {LoadScene} from "./scenes/LoadScene.js";
 import {MenuScene} from "./scenes/MenuScene.js";
 import {WorldScene} from "./scenes/WorldScene.js";
+import {GameUI} from "./scenes/GameUI.js";
 
 let config = {
     type: Phaser.AUTO,
@@ -13,8 +14,7 @@ let config = {
             debug: true
         }
     },
-    zoom: 2,
-    scene: [LoadScene, MenuScene, WorldScene],
+    scene: [LoadScene, MenuScene, WorldScene, GameUI],
     render: {
         pixelArt: true
     }

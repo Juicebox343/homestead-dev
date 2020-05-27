@@ -5,6 +5,8 @@ import {createCharacterAnims } from "./CharacterAnims.js";
 import {Bat} from './Enemies.js';
 import '../characters/Hero.js';
 
+import {sceneEvents} from '../events/EventCenter.js';
+
 let hit = 0;
 
 export class WorldScene extends Phaser.Scene{
@@ -19,7 +21,9 @@ export class WorldScene extends Phaser.Scene{
     this.keyboard = this.input.keyboard.addKeys('W, A, S, D, SPACE');   
   }
   
+
   create(){
+    this.scene.run(CST.SCENES.GAME_UI);
     // this.sound.play(CST.AUDIO.WORLD_MUSIC, {
     //   volume: 0.35,
     //   loop: true
@@ -33,8 +37,8 @@ export class WorldScene extends Phaser.Scene{
     this.physics.world.bounds.width = map.widthInPixels;
     this.physics.world.bounds.height = map.heightInPixels;
 
-    const watergrass = map.addTilesetImage('watergrass', CST.SPRITE.WATER_GRASS);
-    const grass = map.addTilesetImage('grass', CST.SPRITE.GRASS);
+    const watergrass = map.addTilesetImage('watergrass', CST.SPRITE.WATER_GRASS.KEY_NAME);
+    const grass = map.addTilesetImage('grass', CST.SPRITE.GRASS.KEY_NAME);
     
     const groundLayer = map.createStaticLayer("ground1", grass, 0, 0);
     const waterLayer = map.createStaticLayer("water1", watergrass, 0, 0);
@@ -42,7 +46,7 @@ export class WorldScene extends Phaser.Scene{
     waterLayer.setCollisionByProperty({ collides: true });
 
 
-    this.hero = this.add.hero(128, 128, 'hero')
+    this.hero = this.add.hero(128, 128, CST.CHARACTERS.HERO.KEY_NAME)
 
     this.hero.direction = 'down';
     
@@ -63,7 +67,7 @@ export class WorldScene extends Phaser.Scene{
     this.physics.add.collider(bats, waterLayer);
     this.physics.add.collider(bats, this.hero, this.handlePlayerEnemyCollision, undefined, this)
 
-    debugDraw(waterLayer, this, '#FBBC5A')
+    //debugDraw(waterLayer, this, '#FBBC5A')
    
   }
 
@@ -75,6 +79,7 @@ export class WorldScene extends Phaser.Scene{
   
     this.hero.handleDamage(direction)
 
+    sceneEvents.emit('player-health-changed', this.hero.health )
   }
   
   update(time, delta){
