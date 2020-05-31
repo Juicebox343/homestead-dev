@@ -6,10 +6,7 @@ export class LoadScene extends Phaser.Scene{
             key: CST.SCENES.LOAD
         })
     }
-    init(){
-
-    }
-
+ 
     loadImages(){
         this.load.setPath("./assets/images");
         for(let prop in CST.IMAGE){
@@ -27,14 +24,14 @@ export class LoadScene extends Phaser.Scene{
     loadSprites(frameConfig){
         this.load.setPath("./assets/sprites");
         for(let prop in CST.SPRITE){
-            this.load.spritesheet(CST.SPRITE[prop].KEY_NAME, CST.SPRITE[prop].SPRITES, {frameWidth: CST.SPRITE[prop].WIDTH, frameHeight: CST.SPRITE[prop].HEIGHT});
+            this.load.spritesheet(CST.SPRITE[prop].KEY, CST.SPRITE[prop].SPRITES, {frameWidth: CST.SPRITE[prop].WIDTH, frameHeight: CST.SPRITE[prop].HEIGHT});
         }
     }
 
-    loadCharacters(){
+    loadAtlasSprites(){
         this.load.setPath("./assets/sprites");
-        for(let prop in CST.CHARACTERS){
-            this.load.atlas(CST.CHARACTERS[prop].KEY_NAME, CST.CHARACTERS[prop].SPRITES, CST.CHARACTERS[prop].ATLAS);
+        for(let prop in CST.ATLAS_SPRITES){
+            this.load.atlas(CST.ATLAS_SPRITES[prop].KEY, CST.ATLAS_SPRITES[prop].SPRITES, CST.ATLAS_SPRITES[prop].ATLAS);
         }   
     }
     
@@ -43,7 +40,8 @@ export class LoadScene extends Phaser.Scene{
         this.loadImages();
         // this.loadAudio();
         this.loadSprites();
-        this.loadCharacters();
+        this.loadAtlasSprites();
+       
         //loading bar
         let loadingBar = this.add.graphics({
             fillStyle: {
@@ -55,11 +53,6 @@ export class LoadScene extends Phaser.Scene{
 
         this.load.on("progress", (percent) => {
             loadingBar.fillRect(0, this.game.renderer.height / 2, this.game.renderer.width * percent, 25);            
-            // console.log(`loading: ${percent * 100}%`);
-        })
-
-        this.load.on('complete', ()=>{
-            // this.scene.start(CST.SCENES.MENU);
         })
 
         this.load.on("load", (file) =>{

@@ -32,13 +32,13 @@ export class MenuScene extends Phaser.Scene{
         this.bg4.setAlpha(0.5);
         this.bg4.setScale(1.5);
 
-        this.bird = this.add.sprite(-50, 290, CST.SPRITE.ROBIN.KEY_NAME);
+        this.bird = this.add.sprite(-50, 290, CST.SPRITE.ROBIN.KEY);
         
         this.anims.create({
             key: 'fly',
             frameRate: 6,
             repeat: -1,
-            frames: this.anims.generateFrameNumbers(CST.SPRITE.ROBIN.KEY_NAME)
+            frames: this.anims.generateFrameNumbers(CST.SPRITE.ROBIN.KEY)
         })
 
         this.bird.anims.play('fly');

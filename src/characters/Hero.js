@@ -1,4 +1,6 @@
-import {CST} from '../CST.js'
+import {CST} from '../CST.js';
+import {sceneEvents} from '../events/EventCenter.js'
+// import Chest from '../items/Chest.js';
 
 const HealthState = {IDLE: 1, DAMAGE: 2, DEAD: 3}
 
@@ -8,6 +10,7 @@ export default class Hero extends Phaser.Physics.Arcade.Sprite{
     damageTime = 0;
 
     _health = 3;
+    _coins = 0;
 
     get health(){
       return this._health;
@@ -20,6 +23,10 @@ export default class Hero extends Phaser.Physics.Arcade.Sprite{
 
     setArrows(arrows){
       this.arrows = arrows;
+    }
+
+    setChest(chest){
+      this.activeChest = chest;
     }
 
     handleDamage(direction){
@@ -72,7 +79,11 @@ export default class Hero extends Phaser.Physics.Arcade.Sprite{
       }
 
       const angle = arrowVec.angle();
-      const arrow = this.arrows.get(this.x, this.y, CST.SPRITE.PLAIN_ARROW.KEY_NAME)
+      const arrow = this.arrows.get(this.x, this.y, CST.SPRITE.PLAIN_ARROW.KEY)
+      if(!arrow){
+        return
+      }
+      
       arrow.setRotation(angle)
       arrow.setVelocity(arrowVec.x * 500, arrowVec.y * 500)
 
@@ -118,13 +129,20 @@ export default class Hero extends Phaser.Physics.Arcade.Sprite{
         //if no keys are down, play the idle frame according to direction.
         if (!(keyboard.W.isDown || keyboard.A.isDown || keyboard.S.isDown || keyboard.D.isDown || keyboard.SPACE.isDown)) {
           this.anims.play(`${this.direction}-idle`, true);
-          
         } else if(Phaser.Input.Keyboard.JustDown(keyboard.SPACE)){
+          if(this.activeChest){
+            const coins = this.activeChest.open();
+            this._coins += coins;
+            sceneEvents.emit('player-coins-changed', this._coins)
+            this.activeChest = undefined
+            console.log(this.activeChest)
+          } else {
             this.setVelocity(0,0)
             this.anims.play(`${this.direction}-shoot`, true); 
             this.once('animationcomplete', this.shootArrow, this);
-            return
-          } else if(!keyboard.SPACE.isDown) {
+            return           
+          }
+        } else if(!keyboard.SPACE.isDown) {
           //if a key is down, set velocity according to speed, set direction
           if(keyboard.W.isDown){
             this.setVelocityY(-speed);          
@@ -133,23 +151,18 @@ export default class Hero extends Phaser.Physics.Arcade.Sprite{
             this.setVelocityY(speed);
             this.direction = 'down';
           }
-    
           if(keyboard.A.isDown){
             this.setVelocityX(-speed);
             this.direction = 'left';
           } else if(keyboard.D.isDown){
             this.setVelocityX(speed);
             this.direction = 'right';
-          }
-
-
-  
+          }  
           //play appropirate animation as dictated by direction from above
           if(!keyboard.SPACE.isDown){
             this.anims.play(`${this.direction}-walk`, true);
           }
         }
-  
         this.body.velocity.normalize().scale(speed);
     }
 }

@@ -14,12 +14,11 @@ export class GameUI extends Phaser.Scene{
 
     create(){
 
-        this.hearts = this.add.group({
-           
-        })
+        this.hearts = this.add.group({})
+        this.coinsLabel = this.add.text(5, 40, '0');
 
         this.hearts.createMultiple({
-            key: CST.SPRITE.UI_HEART.KEY_NAME,
+            key: CST.SPRITE.UI_HEART.KEY,
             setXY:{
                 x: 16,
                 y: 16,
@@ -30,9 +29,13 @@ export class GameUI extends Phaser.Scene{
         })
 
         sceneEvents.on('player-health-changed', this.handlePlayerHealthChanged, this);
+        sceneEvents.on('player-coins-changed', coins =>{
+            this.coinsLabel.text = coins.toLocaleString()
+        })
         
         this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
             sceneEvents.off('player-health-changed', this.handlePlayerHealthChanged, this)
+            sceneEvents.off('player-coins-changed')
         })
     }
 
@@ -41,10 +44,10 @@ export class GameUI extends Phaser.Scene{
             const heart = gameObject;
             
             if (index < health){
-                heart.setTexture(CST.SPRITE.UI_HEART.KEY_NAME, 0)
+                heart.setTexture(CST.SPRITE.UI_HEART.KEY, 0)
                 console.log(index)
             } else {
-                heart.setTexture(CST.SPRITE.UI_HEART.KEY_NAME, 4)
+                heart.setTexture(CST.SPRITE.UI_HEART.KEY, 4)
                 console.log(index)
             }
         })

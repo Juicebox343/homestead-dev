@@ -18,57 +18,62 @@ export const CST = {
     },
     SPRITE: {
         ROBIN: {
-            KEY_NAME: 'robin',
+            KEY: 'robin',
             SPRITES: 'robin_fly.png',
             WIDTH: 32,
             HEIGHT: 32
         },
         TREE: {
-            KEY_NAME: 'tree',
+            KEY: 'tree',
             SPRITES: 'tree.png',
             WIDTH: 32,
             HEIGHT: 32
         },
         GRASS: {
-            KEY_NAME: 'grass',
+            KEY: 'grass',
             SPRITES: 'grass.png',
             WIDTH: 32,
             HEIGHT: 32
         },
         WATER_GRASS: {
-            KEY_NAME: 'water_grass',
+            KEY: 'water_grass',
             SPRITES: 'watergrass.png',
             WIDTH: 32,
             HEIGHT: 32
         },
         UI_HEART: {
-            KEY_NAME: 'ui-heart',
+            KEY: 'ui-heart',
             SPRITES: 'heartsprite.png',
             WIDTH: 16,
             HEIGHT: 16
         },
         PLAIN_ARROW: {
-            KEY_NAME: 'plain_arrow',
+            KEY: 'plain_arrow',
             SPRITES: 'arrow-knocked.png',
             WIDTH: 27,
             HEIGHT: 12
         }
     },
-    CHARACTERS: {
+    ATLAS_SPRITES: {
         HERO: {
-            KEY_NAME: 'hero',
+            KEY: 'hero',
             SPRITES: 'hero.png',
             ATLAS: 'hero.json'
         },
         HERO_ALT: {
-            KEY_NAME: 'hero_alt',
+            KEY: 'hero_alt',
             SPRITES: 'hero_alt.png',
             ATLAS: 'hero_alt.json'
         },
         BAT: {
-            KEY_NAME: 'bat',
+            KEY: 'bat',
             SPRITES: 'bat.png',
             ATLAS: 'bat.json'
+        },
+        CHESTS: {
+            KEY: 'treasure_chest',
+            SPRITES: 'selectedChests.png',
+            ATLAS: 'selectedChests.json'
         }
     },
     AUDIO: {
